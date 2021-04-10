@@ -17,7 +17,7 @@ public class Algoritma {
     public void saslCarpan(int sayi) {
     	int bolen=2;
     	int bolunen=sayi;
-    	System.out.println("asal �arpanlar:");
+    	System.out.println("asal çarpanlar:");
     	while(bolen<sayi) {
     		if (bolunen%bolen==0) {
 				System.out.println(bolen+" ");
@@ -26,7 +26,7 @@ public class Algoritma {
 				bolen++;
 			}
     	}
-    	System.out.print(sayi == bolunen ? "Asal say� Girdiniz":"");
+    	System.out.print(sayi == bolunen ? "Asal sayı Girdiniz":"");
     	}
     public void dortunKatiKadarPiramit(int sayi) {
     	for (int i = 0; i <sayi-1; i++) {
@@ -46,4 +46,51 @@ public class Algoritma {
 			System.out.println();
 			}
     	}
-}
+    public void tasKagitMakas(int kullanicidanAlınanSayi) {
+    	//0-tas//1-kağıt//2-makas
+    	//3 yapan kazanır
+    	int bilgisayarKAzandi=0;
+    	int kullaniciKAzandi=0;
+    	while(bilgisayarKAzandi<3 &&kullaniciKAzandi<3) {
+    		System.out.println("taş,kağıt,makas?");
+    		int bilgisayar=(int)(Math.random()*3);
+    		//bilgisayarın değeri yazdırılıyor
+    		switch (bilgisayar) {
+			case 0:
+				System.out.println("Taş:");
+				break;
+			case 1:
+				System.out.println("kağıt:");
+				break;case 2:
+					System.out.println("makas:");
+					break;
+    		}
+    		System.out.println("kullanıcı:");
+    		switch (kullanicidanAlınanSayi) {
+			case 0:
+				System.out.println("taş");
+				break;
+			case 1:
+				System.out.println("kağıt");
+				break; 
+				case 2:
+					System.out.println("makas");
+					break;
+			}
+    		if (kullanicidanAlınanSayi==bilgisayar) {
+				System.out.println("berabere");
+			}else {
+				if ((kullanicidanAlınanSayi==0 && bilgisayar==2) ||(kullanicidanAlınanSayi==1 && bilgisayar==0) ||(kullanicidanAlınanSayi==2 &&bilgisayar==1)) {
+					System.out.println("bu eli bilgisayarkazandı");
+					kullanicidanAlınanSayi++;
+				}else {
+					System.out.println("bu eli bilgisayarkazandı");
+					bilgisayar++;
+				}
+				
+			}
+    		System.out.println("kullanıcı:"+kullaniciKAzandi+"-"+"bilgisayar"+bilgisayarKAzandi);
+    	}
+					System.out.println(kullaniciKAzandi==3 ?  "kullanıcı kazandı":"bilgisayar kazandı");
+    	}
+    }
